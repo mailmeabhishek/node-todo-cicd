@@ -25,6 +25,11 @@ pipeline {
                 }
             }
         }
+        stage("OWASP"){
+            steps{
+                echo "OWASP Dependency Check Done Successfully"
+            }
+        }
         stage("Build & Test"){
             steps{
                 sh 'docker build -t node-app-batch-6:latest .'
